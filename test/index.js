@@ -4,7 +4,7 @@ var expect = require('expect.js'),
 
 describe('co-sleep', function() {
   it('should sleep for ms', function(done) {
-    co(function *() {
+    co.wrap(function *() {
       var now = Date.now();
       yield sleep(1000);
       expect(Date.now() - now).to.not.be.below(1000);
